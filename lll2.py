@@ -13,3 +13,18 @@
 #     print("Ошибка ввода!")
 
 # lambda
+n = int(input('Введите натуральное число > 0: '))
+
+function_calculator = lambda n: round((1+1/n)**n, 2)
+
+if n > 0:
+    result = []
+    for i in range(1, n+1):
+        result.append(function_calculator(i))
+    total = 0
+    for j in result:
+        total += j
+    print(f"Список из {n} чисел заданной последовательности (1+1/{n})^{n}: {result}")
+    print(f"Cумма элементов из списка выше: {round(total, 2)}")
+else:
+    print("Ошибка ввода!")
